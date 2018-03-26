@@ -1,5 +1,5 @@
 """
-定义了所有 API 对应的 URL
+api
 """
 from flask import Blueprint
 from rmon.views.index import IndexView

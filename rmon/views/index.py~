@@ -2,17 +2,17 @@
 # -*- coding:utf-8 -*-
 
 """
-首页视图
+front
 """
 from flask import render_template
 from flask.views import MethodView
 
 class IndexView(MethodView):
 	"""
-	首页视图
+	front
 	"""
 	def get(self):
 		"""
-		渲染模板
+		tem
 		"""
 		return render_template('index.html')

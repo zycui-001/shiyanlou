@@ -18,7 +18,7 @@ class Server(db.Model):
 	updated_at = db.Column(db.DateTime, default=datetime.utcnow)
 	created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
-    # 该方法使得我们在通过print(server_instance)这样的语句打印server实例显示服务器名称信息
+    # 
 	def __repr__(self):
 		return '<Server(name=%s)>' % self.name
 

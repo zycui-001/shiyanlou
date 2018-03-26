@@ -7,7 +7,7 @@ rmon config
 
 class DevConfig:
 	"""
-	开发配置环境
+	Devconfig
 	"""
 	DEBUG = True
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -18,6 +18,6 @@ class ProductConfig(DevConfig):
 
 	DEBUG = False
 
-	#sqlite 数据库文件路径
+	#sqlite
 	path = os.path.join(os.getcwd(), 'rmon.db').replace('\\', '/')
 	SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % path 

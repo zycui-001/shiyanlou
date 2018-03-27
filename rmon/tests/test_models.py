@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from rmon.models import Server
+from rmon.common.rest import RestException
 
 class TestServer:
 	"""测试 Server 相关功能 
@@ -25,3 +26,20 @@ class TestServer:
 		assert Server.query.count() == 1
 		server.delete()
 		assert Server.query.count() == 0
+
+	def test_ping_success(self, db, server):
+		"""test
+		"""
+		assert server.ping() is True
+
+	def test_ping_failed(self, db):
+		"""test
+		"""
+		server = Server(name='test', host='127.0.0.1', port=6399)
+
+		try:
+			server.ping()
+		except RestException as e:
+			assert e.code == 400
+			assert e.message == 'redis server %s can not connected' % server.host
+			

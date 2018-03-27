@@ -29,6 +29,6 @@ def server(db):
 	"""
 	测试 Redis 服务器记录
 	"""
-	server = Server(name='redis_test', description="this is a test record", host='123.5.6.4', port='6580')
+	server = Server(name='redis_test', description="this is a test record", host='127.0.0.1', port='6380')
 	server.save()
 	return server
